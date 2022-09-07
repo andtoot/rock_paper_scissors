@@ -1,24 +1,43 @@
-const choice = ["Rock", "Paper", "Scissors"];
+const choice = ["rock", "paper", "scissors"];
 
 function getComputerChoice () {
     return choice[Math.floor(Math.random()*choice.length)];  
 }
 console.log(getComputerChoice(choice));
 
-const playerSelection = "Rock";
 const computerSelection = getComputerChoice();
 console.log(computerSelection);
-console.log(playerSelection);
+
 
 
 function playRound () {
-    while (playerSelection === "Rock") {
-        if (computerSelection === "Rock")
+    const playerChoice = prompt("Rock, Paper, or Scissors?");
+    const playerSelection = playerChoice.toLowerCase();
+    while (playerSelection === "rock") {
+        if (computerSelection === "rock")
             console.log("Its a tie!");
-        else if (computerSelection === "Scissors")
+        else if (computerSelection === "scissors")
             console.log("Scissors, you win!");
-        else if (computerSelection === "Paper")
+        else if (computerSelection === "paper")
             console.log("Paper, you lose!");
+        break
+    }
+    while (playerSelection === "paper") {
+        if (computerSelection === "rock")
+            console.log("Rock, you win!");
+        else if (computerSelection === "scissors")
+            console.log("Scissors, you lose!");
+        else if (computerSelection === "paper")
+            console.log("Its a tie!");
+        break
+    }
+    while (playerSelection === "scissors") {
+        if (computerSelection === "rock")
+            console.log("Rock, you lose!");
+        else if (computerSelection === "scissors")
+            console.log("Its a tie!");
+        else if (computerSelection === "paper")
+            console.log("Paper, you win!");
         break
     }
     
